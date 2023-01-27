@@ -1,6 +1,6 @@
 {
   "name": "insomnia-plugin-p24-request-sign",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "insomnia": {
     "name": "p24-request-sign",
