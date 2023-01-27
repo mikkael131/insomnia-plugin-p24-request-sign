@@ -13,5 +13,18 @@
     "url": "https://github.com/mikkael131/insomnia-plugin-p24-request-sign/issues"
   },
   "homepage": "https://github.com/mikkael131/insomnia-plugin-p24-request-sign#readme",
-  "description": ""
+  "description": "Insomnia plugin for injecting a signature into the request body of requests to p24 (przelewy24.pl)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikkael131/insomnia-plugin-p24-request-sign.git"
+  },
+  "keywords": [
+    "insomnia",
+    "insomnia-plugin",
+    "p24",
+    "przelewy24.pl"
+  ]
 }
