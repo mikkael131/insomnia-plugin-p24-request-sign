@@ -60,15 +60,16 @@ module.exports.requestHooks = [
             return;
         }
 
-        const crcKey = req.getEnvironmentVariable('p24_crc_key');
-        if (crcKey === null || crcKey === undefined) {
-            throw new Error('could not find environment variable "p24_crc_key"');
-        }
-
         const body = req.getBody()
         const jsonBody = JSON.parse(body.text)
         if (jsonBody['sign'] === null || jsonBody['sign'] === undefined) {
-            throw new Error('could not find "sign" property in request body');
+            console.log('[p24 signature] request has no "sign" property in request body, skipping');
+            return;
+        }
+
+        const crcKey = req.getEnvironmentVariable('p24_crc_key');
+        if (crcKey === null || crcKey === undefined) {
+            throw new Error('could not find environment variable "p24_crc_key"');
         }
 
         const signatureProperties = jsonBody['sign'].split(",")
