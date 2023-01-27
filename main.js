@@ -73,10 +73,11 @@ module.exports.requestHooks = [
 
         const signatureProperties = jsonBody['sign'].split(",")
         const signature = signatureProperties.reduce(function (red, key) {
-            if (key === 'crc')
+            if (key === 'crc') {
                 red[key] = crcKey;
-            if (key in jsonBody)
+            } else if (key in jsonBody) {
                 red[key] = jsonBody[key];
+            }
             return red;
         }, {});
         console.log("[p24 signature] retrieved signature properties:", signature)
